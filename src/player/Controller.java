@@ -2,7 +2,7 @@ package player;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -25,7 +25,7 @@ public class Controller {
     @FXML
     public Button songsFolderPath;
     @FXML
-    public HBox songsList;
+    public VBox songsList;
 
     List<Button> buttonlist = new ArrayList<>();
 
@@ -67,6 +67,10 @@ public class Controller {
                 buttonlist.add(new Button(file.getName()));
                 System.out.println(file.getName());
             }
+
+        }
+        for (int elem = 0; elem < buttonlist.size(); elem++){
+            buttonlist.get(elem).setMinSize(songsList.getPrefWidth(),20);
         }
         songsList.getChildren().clear();
         songsList.getChildren().addAll(buttonlist);
