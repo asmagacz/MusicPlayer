@@ -25,13 +25,22 @@ public class Controller {
     @FXML
     public Button pause;
     @FXML
+    public Button next;
+    @FXML
     public Slider volume;
     @FXML
     public Button songsFolderPath;
     @FXML
     public VBox songsList;
+    @FXML
+    public Button prev;
 
-    List<Button> buttonlist = new ArrayList<>();
+    private Media hit;
+    private MediaPlayer  mediaPlayer;
+
+    private List<Button> buttonlist = new ArrayList<>();
+
+    private int index = 0;
 
     //TODO wczytywanie listy utworów i przewijanie
     //private Media hit = new Media(new File(toString(songs.getFolder() " " songs.getListOfFiles(0))));
@@ -47,21 +56,35 @@ public class Controller {
 
 
     public void playMusic(){
-        int index = 0;
         //TODO wczytywanie poprawnej ścieżki
-        Media hit = new Media(songs.listOfFiles[index].toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
-        if(!mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING)|| index < songs.listOfFiles.length)
-            index+=1;
     }
 
     public void stopMusic(){
-      //  mediaPlayer.stop();
+        mediaPlayer.stop();
     }
 
     public void pauseMusic(){
-      //  mediaPlayer.pause();
+        mediaPlayer.pause();
+    }
+
+    public void nextSong(){
+        index += 1;
+        mediaPlayer.stop();
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+
+    }
+    public void prevSong(){
+        index -= 1;
+        mediaPlayer.stop();
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+
     }
 
     public void readPath(){

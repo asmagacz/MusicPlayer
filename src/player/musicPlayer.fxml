@@ -14,8 +14,8 @@
          <children>
             <Button fx:id="play" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#playMusic" prefHeight="30.0" prefWidth="75.0" text="Play" />
             <Button fx:id="stop" layoutX="137.0" layoutY="22.0" mnemonicParsing="false" onAction="#stopMusic" prefHeight="30.0" prefWidth="75.0" text="Stop" />
-            <Button fx:id="prev" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Prev" />
-            <Button fx:id="next" layoutX="137.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Next" />
+            <Button fx:id="prev" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Prev" onAction="#prevSong" />
+            <Button fx:id="next" layoutX="137.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Next" onAction="#nextSong" />
             <Button fx:id="pause" layoutX="255.0" layoutY="22.0" mnemonicParsing="false" onAction="#pauseMusic" prefHeight="30.0" prefWidth="75.0" text="Pause" />
             <Button fx:id="favourite" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Favourite" />
             <Button fx:id="queue" layoutX="138.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Queue" />
