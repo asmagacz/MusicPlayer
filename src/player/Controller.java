@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,10 +49,10 @@ public class Controller {
     public void playMusic(){
         int index = 0;
         //TODO wczytywanie poprawnej ścieżki
-        Media hit = new Media(songs.listOfFiles[index].getAbsolutePath());
+        Media hit = new Media(songs.listOfFiles[index].toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
-        if(!mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING))
+        if(!mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING)|| index < songs.listOfFiles.length)
             index+=1;
     }
 
