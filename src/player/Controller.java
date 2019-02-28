@@ -3,9 +3,12 @@ package player;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +46,13 @@ public class Controller {
 
 
     public void playMusic(){
-      //  mediaPlayer.play();
+        int index = 0;
+        //TODO wczytywanie poprawnej ścieżki
+        Media hit = new Media(songs.listOfFiles[index].getAbsolutePath());
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+        if(!mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING))
+            index+=1;
     }
 
     public void stopMusic(){
