@@ -1,5 +1,6 @@
 package player;
 
+import controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +15,7 @@ public class Main extends Application {
         //primaryStage.setTitle("Music Player");
        // primaryStage.setScene(new Scene(root, 500, 700));
         //primaryStage.show();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("musicPLayer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/musicPlayer.fxml"));
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Music Player");
         primaryStage.setScene(new Scene(root, 500, 700));

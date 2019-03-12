@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="ap" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <children>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0">
+            <children>
+                <Button fx:id="play" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#playMusic" prefHeight="30.0" prefWidth="75.0" text="Play" />
+                <Button fx:id="stop" layoutX="137.0" layoutY="22.0" mnemonicParsing="false" onAction="#stopMusic" prefHeight="30.0" prefWidth="75.0" text="Stop" />
+                <Button fx:id="prev" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#prevSong" prefHeight="30.0" prefWidth="75.0" text="Prev" />
+                <Button fx:id="next" layoutX="137.0" layoutY="110.0" mnemonicParsing="false" onAction="#nextSong" prefHeight="30.0" prefWidth="75.0" text="Next" />
+                <Button fx:id="pause" layoutX="255.0" layoutY="22.0" mnemonicParsing="false" onAction="#pauseMusic" prefHeight="30.0" prefWidth="75.0" text="Pause" />
+                <Button fx:id="favourite" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Favourite" />
+                <Button fx:id="queue" layoutX="138.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Queue" />
+                <Button fx:id="loop" layoutX="263.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Loop" />
+                <Button fx:id="random" layoutX="386.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Random" />
+                <Slider fx:id="volume" layoutX="450.0" layoutY="14.0" onDragOver="#setVolume" orientation="VERTICAL" value="80.0" />
+                <Button fx:id="songsFolderPath" layoutX="260.0" layoutY="110.0" mnemonicParsing="false" onAction="#readPath" prefHeight="30.0" prefWidth="75.0" text="Path" />
+                <VBox fx:id="songsList" alignment="CENTER" layoutX="10.0" layoutY="226.0" prefHeight="460.0" prefWidth="480.0" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
