@@ -9,6 +9,8 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import player.Songs;
 
+import java.sql.SQLOutput;
+
 
 public class Controller {
     static Stage stage;
@@ -23,7 +25,7 @@ public class Controller {
     @FXML
     public Button next;
     @FXML
-    public Slider volume;
+    public Slider volume = new Slider(0, 100, 0);
     @FXML
     public Button songsFolderPath;
     @FXML
@@ -81,7 +83,6 @@ public class Controller {
         hit = new Media(songs.listOfFiles[index].toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
-
     }
 
     public void readPath() {
@@ -96,6 +97,7 @@ public class Controller {
 
     //TODO naprawic ustawianie glosnosci
     public void setVolume() {
-        // mediaPlayer.setVolume(volume.getValue());
+            mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
+            System.out.println(volume.getValue());
     }
 }

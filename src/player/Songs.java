@@ -12,6 +12,7 @@ public class Songs {
 
     //TODO rodzielić na osobne pliki ListOfFiles i songs
     public File[] listOfFiles;
+    //TODO zmienić wczytywanie plików żeby zapisywało
 
     public Songs() {
         //readSongs();
@@ -34,7 +35,7 @@ public class Songs {
 
         }
         for (int elem = 0; elem < buttonlist.size(); elem++) {
-            buttonlist.get(elem).setMinSize(480, 20);
+            buttonlist.get(elem).setMinSize(460, 30);
         }
     }
 
