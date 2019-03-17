@@ -39,12 +39,8 @@ public class Controller {
     private int index = 0;
 
     public Controller() {
-        if (songs.getButtonlist().isEmpty()) {
-            showPlaylist();
-        } else {
-            songs.playList();
-            showPlaylist();
-        }
+            //songs.playList();
+            //showPlaylist();
     }
 
     public void setStage(Stage stage) {
@@ -92,7 +88,7 @@ public class Controller {
 
     public void readPath() {
         songs.readPath();
-
+        showPlaylist();
     }
 
     private void showPlaylist() {

@@ -17,7 +17,7 @@ public class Songs {
     //TODO zmienić wczytywanie plików żeby zapisywało
 
     public Songs() {
-        //playList();
+        playList();
         //readSongs();
     }
 
@@ -26,7 +26,7 @@ public class Songs {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(null);
         listOfFiles.addAll(Arrays.asList(selectedDirectory.listFiles()));
-        //playList();
+        playList();
         writeIntoFile();
     }
 
@@ -41,6 +41,7 @@ public class Songs {
             fne.printStackTrace();
         }
         fromSongsDataFileToListOfFiles();
+
     }
 
     private void fromSongsDataFileToListOfFiles(){
@@ -48,17 +49,25 @@ public class Songs {
     }
 
     public void playList() {
+        System.out.println("dziala1");
+        System.out.println(listOfFiles.isEmpty());
         if (listOfFiles.isEmpty()) {
+            System.out.println("lista pusta");
             try (BufferedReader br = new BufferedReader(new FileReader(songsDataFile))) {
+                System.out.println("odczytuje plik");
                 String line = br.readLine();
                 while (line != null) {
+                    System.out.println("przed dodaniem do listy");
                     listOfFiles.add(new File(line));
+                    line = br.readLine();
+                    System.out.println("po dodaniu do listy");
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        System.out.println("dziala2");
         for (File file : listOfFiles) {
             if (file.isFile()) {
                 //TODO fix list of songs
@@ -68,6 +77,7 @@ public class Songs {
             }
 
         }
+        System.out.println("dziala3");
         for (int elem = 0; elem < buttonlist.size(); elem++) {
             buttonlist.get(elem).setMinSize(460, 30);
 
@@ -75,6 +85,7 @@ public class Songs {
     }
 
     public List<Button> getButtonlist() {
+        System.out.println("dziala4");
         return buttonlist;
     }
 
