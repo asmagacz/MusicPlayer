@@ -39,7 +39,12 @@ public class Controller {
     private int index = 0;
 
     public Controller() {
-
+        if (songs.getButtonlist().isEmpty()) {
+            showPlaylist();
+        } else {
+            songs.playList();
+            showPlaylist();
+        }
     }
 
     public void setStage(Stage stage) {
@@ -49,7 +54,7 @@ public class Controller {
 
     public void playMusic() {
         //TODO wczytywanie poprawnej ścieżki
-        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
     }
@@ -71,7 +76,7 @@ public class Controller {
     public void nextSong() {
         index += 1;
         mediaPlayer.stop();
-        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
 
@@ -80,14 +85,14 @@ public class Controller {
     public void prevSong() {
         index -= 1;
         mediaPlayer.stop();
-        hit = new Media(songs.listOfFiles[index].toURI().toString());
+        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
     }
 
     public void readPath() {
         songs.readPath();
-        showPlaylist();
+
     }
 
     private void showPlaylist() {
@@ -97,7 +102,7 @@ public class Controller {
 
     //TODO naprawic ustawianie glosnosci
     public void setVolume() {
-            mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
-            System.out.println(volume.getValue());
+        mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
+        System.out.println(volume.getValue());
     }
 }
