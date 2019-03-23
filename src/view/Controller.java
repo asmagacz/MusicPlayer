@@ -39,7 +39,8 @@ public class Controller {
     private int index = 0;
 
     public Controller() {
-
+            //songs.playList();
+            //showPlaylist();
     }
 
     public void setStage(Stage stage) {
@@ -97,7 +98,7 @@ public class Controller {
 
     //TODO naprawic ustawianie glosnosci
     public void setVolume() {
-            mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
-            System.out.println(volume.getValue());
+        mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
+        System.out.println(volume.getValue());
     }
 }
