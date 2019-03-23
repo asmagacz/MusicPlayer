@@ -1,0 +1,2 @@
+C:\Projekty\JavaProjects\MusicPlayer\src\songslist\TheGangCelebration.mp3
+C:\Projekty\JavaProjects\MusicPlayer\src\songslist\Thriller.mp3

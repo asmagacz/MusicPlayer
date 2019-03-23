@@ -50,7 +50,7 @@ public class Controller {
 
     public void playMusic() {
         //TODO wczytywanie poprawnej ścieżki
-        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
     }
@@ -72,7 +72,7 @@ public class Controller {
     public void nextSong() {
         index += 1;
         mediaPlayer.stop();
-        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
 
@@ -81,7 +81,7 @@ public class Controller {
     public void prevSong() {
         index -= 1;
         mediaPlayer.stop();
-        hit = new Media(songs.listOfFiles.get(index).toURI().toString());
+        hit = new Media(songs.listOfFiles[index].toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
     }
