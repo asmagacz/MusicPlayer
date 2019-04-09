@@ -1,5 +1,7 @@
 package view;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -7,9 +9,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import player.ListOfFiles;
+import player.SongTimer;
 import player.Songs;
-
-import java.util.concurrent.TimeUnit;
 
 public class Controller {
     static Stage stage;
@@ -43,8 +44,11 @@ public class Controller {
     private Media hit;
     private MediaPlayer mediaPlayer;
     private ListOfFiles readListOfFiles = new ListOfFiles();
+    private SongTimer timer;
 
     private int index = 0;
+
+    private boolean isPlaying = false;
 
     public Controller() {
     }
@@ -59,12 +63,20 @@ public class Controller {
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
+        System.out.println(mediaPlayer.getTotalDuration());
         changeTitle();
-        if(mediaPlayer.getStatus() == MediaPlayer.Status.STOPPED){
-            nextSong();
-        }
+        checkStatus();
+        /*MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
         //TODO fix song timer
         //showTimer();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                while (status) {
+                    songTimer.setText(timer.showTimer());
+                }
+            }
+        });*/
     }
 
     public void stopMusic() {
@@ -74,8 +86,10 @@ public class Controller {
     public void pauseMusic() {
         MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
         if (currentStatus == MediaPlayer.Status.PLAYING) {
+            System.out.println(mediaPlayer.getStatus());
             mediaPlayer.pause();
         } else {
+            System.out.println(mediaPlayer.getStatus());
             mediaPlayer.play();
         }
 
@@ -84,42 +98,46 @@ public class Controller {
     public void nextSong() {
         index += 1;
         mediaPlayer.stop();
-        /// TODO: 03.04.2019 dodac if sprawdzajacego index
-        if(index > songs.listOfFiles.size() - 1){
+
+        if (index > songs.listOfFiles.size() - 1) {
             index = 0;
         }
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
         changeTitle();
-
-        MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
-
-        if(currentStatus == MediaPlayer.Status.STOPPED){
-            nextSong();
-        }
+        checkStatus();
     }
 
     public void prevSong() {
         index -= 1;
         mediaPlayer.stop();
-        if(index < 0){
+        if (index < 0) {
             index = songs.listOfFiles.size() - 1;
         }
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
         changeTitle();
-        if(mediaPlayer.getStatus() == MediaPlayer.Status.STOPPED){
-            nextSong();
-        }
+        checkStatus();
+    }
+
+    private void checkStatus() {
+        mediaPlayer.setOnEndOfMedia(new Runnable() {
+            @Override
+            public void run() {
+                mediaPlayer.stop();
+                nextSong();
+                return;
+            }
+        });
     }
 
     public void readPath() {
         readListOfFiles.readPath();
     }
 
-    public void onMenuSelected(){
+    public void onMenuSelected() {
         songs.readPath();
         showPlaylist();
     }
@@ -137,34 +155,17 @@ public class Controller {
         songTitle.setText(songs.listOfFiles.get(index).getName());
     }
 
-    private void showTimer() {
-        long displayMinutes = 0;
-        long starttime = System.currentTimeMillis();
-        System.out.println("Timer:");
-        while (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            long timepassed = System.currentTimeMillis() - starttime;
-            long secondspassed = timepassed / 1000;
-            if (secondspassed == 60) {
-                secondspassed = 0;
-                starttime = System.currentTimeMillis();
-            }
-            if ((secondspassed % 60) == 0)
-                displayMinutes++;
-
-            System.out.println(displayMinutes + "::" + secondspassed);
-            songTimer.setText(displayMinutes + ":" + secondspassed);
-        }
-    }
-
-
     //TODO naprawic ustawianie glosnosci
     public void setVolume() {
-        // mediaPlayer.volumeProperty().bindBidirectional(volume.valueProperty());
-        //System.out.println(volume.getValue());
+        volume.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                if (volume.isPressed()) {
+                    mediaPlayer.setVolume(volume.getValue() / 100); // It would set the volume
+                    // as specified by user by pressing
+                }
+            }
+        });
+
     }
 }
