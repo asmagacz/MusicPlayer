@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -6,7 +9,7 @@
     <children>
         <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0">
             <children>
-                <Button fx:id="play" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#playMusic" prefHeight="30.0" prefWidth="75.0" text="Play" />
+                <Button fx:id="play" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onMousePressed="#playMusic" prefHeight="30.0" prefWidth="75.0" text="Play" />
                 <Button fx:id="stop" layoutX="137.0" layoutY="22.0" mnemonicParsing="false" onAction="#stopMusic" prefHeight="30.0" prefWidth="75.0" text="Stop" />
                 <Button fx:id="prev" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#prevSong" prefHeight="30.0" prefWidth="75.0" text="Prev" />
                 <Button fx:id="next" layoutX="137.0" layoutY="110.0" mnemonicParsing="false" onAction="#nextSong" prefHeight="30.0" prefWidth="75.0" text="Next" />
@@ -15,13 +18,22 @@
                 <Button fx:id="queue" layoutX="138.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Queue" />
                 <Button fx:id="loop" layoutX="263.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Loop" />
                 <Button fx:id="random" layoutX="386.0" layoutY="172.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Random" />
-                <Slider fx:id="volume" layoutX="450.0" layoutY="14.0" onDragDetected="#setVolume" orientation="VERTICAL" value="80.0" />
+                <Slider fx:id="volume" layoutX="472.0" layoutY="15.0" onDragDetected="#setVolume" orientation="VERTICAL" value="80.0" />
                 <Button fx:id="songsFolderPath" layoutX="260.0" layoutY="110.0" mnemonicParsing="false" onAction="#readPath" prefHeight="30.0" prefWidth="75.0" text="Path" />
                 <ScrollPane layoutX="11.0" layoutY="230.0" prefHeight="465.0" prefWidth="480.0">
                     <content>
                         <VBox fx:id="songsList" prefHeight="465.0" prefWidth="480.0" />
                     </content>
                 </ScrollPane>
+            <Label fx:id="songTitle" layoutX="89.0" layoutY="74.0" prefHeight="20.0" prefWidth="230.0" />
+            <Text layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playing:" />
+            <Label fx:id="songTimer" layoutX="363.0" layoutY="75.0" prefHeight="20.0" prefWidth="50.0" />
+            <MenuButton fx:id="listMenu" layoutX="376.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Show">
+              <items>
+                <MenuItem fx:id="playList" mnemonicParsing="false" onAction="#onMenuSelected" text="Playlist" />
+                <MenuItem mnemonicParsing="false" text="Favourite Songs" />
+              </items>
+            </MenuButton>
             </children>
         </Pane>
     </children>
