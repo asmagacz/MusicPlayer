@@ -1,9 +1,9 @@
 package player;
+
 import javafx.stage.DirectoryChooser;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+
+import java.io.*;
+import java.util.List;
 
 public class ListOfFiles {
     //TODO poprawic i przenieść z klasy Songs
@@ -24,6 +24,17 @@ public class ListOfFiles {
                 writer.println(file);
             }
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeIntoFile(List<File> favSongsList, String fileName) {
+
+        try (FileWriter writer = new FileWriter(fileName, true)) {
+            for (File file : favSongsList) {
+                writer.append(file.toString() + "\n");
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -8,9 +8,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import player.ListOfFiles;
 import player.SongTimer;
 import player.Songs;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Controller {
     static Stage stage;
@@ -25,6 +31,10 @@ public class Controller {
     @FXML
     public Button next;
     @FXML
+    public Button random;
+    @FXML
+    public Button loop;
+    @FXML
     public Slider volume = new Slider(0, 100, 0);
     @FXML
     public Button songsFolderPath;
@@ -35,16 +45,23 @@ public class Controller {
     @FXML
     private Label songTitle;
     @FXML
+    private Button favourite;
+    @FXML
     private Label songTimer;
     @FXML
     private MenuButton menuButton;
     @FXML
     private MenuItem playList;
+    @FXML
+    private MenuItem favList;
+    @FXML
+    private ScrollPane scrollPane;
 
     private Media hit;
     private MediaPlayer mediaPlayer;
     private ListOfFiles readListOfFiles = new ListOfFiles();
     private SongTimer timer;
+    private List<File> favouriteList = new ArrayList<>();
 
     private int index = 0;
 
@@ -66,17 +83,9 @@ public class Controller {
         System.out.println(mediaPlayer.getTotalDuration());
         changeTitle();
         checkStatus();
-        /*MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
         //TODO fix song timer
         //showTimer();
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                while (status) {
-                    songTimer.setText(timer.showTimer());
-                }
-            }
-        });*/
+
     }
 
     public void stopMusic() {
@@ -128,22 +137,58 @@ public class Controller {
             public void run() {
                 mediaPlayer.stop();
                 nextSong();
-                return;
             }
         });
+    }
+
+    public void randomSong() {
+        Random rand = new Random();
+        mediaPlayer.stop();
+        int indexInRandom = rand.nextInt(songs.listOfFiles.size());
+        hit = new Media(songs.listOfFiles.get(indexInRandom).toURI().toString());
+        mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+        changeTitle();
+        checkStatus();
+
+    }
+
+    public void loopSong() {
+        mediaPlayer.setOnEndOfMedia(new Runnable() {
+            @Override
+            public void run() {
+                mediaPlayer.seek(Duration.ZERO);
+                mediaPlayer.play();
+            }
+        });
+    }
+
+    public void addToFavourite() {
+        favouriteList.add(songs.listOfFiles.get(index));
+        readListOfFiles.writeIntoFile(favouriteList, "favListFile.txt");
     }
 
     public void readPath() {
         readListOfFiles.readPath();
     }
 
-    public void onMenuSelected() {
-        songs.readPath();
+    public void onPlaylistSelected() {
+        songs.readPath("songsDataFile.txt");
+        showPlaylist();
+    }
+
+    public void onFavlistSelected() {
+        //TODO naprawić poprawne wyświetlanie i wczytywanie listy oraz odtwarzanie
+        clearPlaylist();
+        songs.getButtonlist().clear();
+        System.out.println(favouriteList.get(0));
+        songs.readPath("favListFile.txt");
         showPlaylist();
     }
 
     private void clearPlaylist() {
-        songsList.getChildren().removeAll(songs.getButtonlist());
+        songsList.getChildren().clear();
+        //TODO naprawić usuwanie i wczytywanie przycisków do listy
     }
 
     private void showPlaylist() {
