@@ -1,24 +1,30 @@
 package player;
 
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
 import java.io.*;
 import java.util.List;
 
 public class ListOfFiles {
     //TODO poprawic i przenieść z klasy Songs
-    private File[] listOfFiles;
+    private List<File> listOfFiles;
     private String songsDataFile = "songsDataFile.txt";
 
     public ListOfFiles() {
     }
 
     public void readPath() {
-        //TODO dodac wczytywanie danych pliku do TXT
-        DirectoryChooser directoryChooser = new DirectoryChooser();
+        //TODO dodac filtr dla plików .mp3
+        /*DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(null);
-        listOfFiles = selectedDirectory.listFiles();
-
+        listOfFiles = selectedDirectory.listFiles();*/
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                "MP3 Files", "*.mp3"
+        ));
+        List<File> files = fileChooser.showOpenMultipleDialog(null);
+        listOfFiles = files;
         try (PrintWriter writer = new PrintWriter(songsDataFile, "UTF-8")) {
             for (File file : listOfFiles) {
                 writer.println(file);

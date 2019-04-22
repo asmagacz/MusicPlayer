@@ -76,7 +76,6 @@ public class Controller {
     //TODO podzielić projekt na odpowiednie pliki zgodnie z MVC
 
     public void playMusic() {
-        //TODO wczytywanie poprawnej ścieżki
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
         mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
@@ -94,11 +93,8 @@ public class Controller {
 
     public void pauseMusic() {
         MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
-        if (currentStatus == MediaPlayer.Status.PLAYING) {
-            System.out.println(mediaPlayer.getStatus());
-            mediaPlayer.pause();
+        if (currentStatus == MediaPlayer.Status.PLAYING) { mediaPlayer.pause();
         } else {
-            System.out.println(mediaPlayer.getStatus());
             mediaPlayer.play();
         }
 
@@ -173,20 +169,24 @@ public class Controller {
     }
 
     public void onPlaylistSelected() {
+        clearPlaylist();
         songs.readPath("songsDataFile.txt");
         showPlaylist();
     }
 
     public void onFavlistSelected() {
-        //TODO naprawić poprawne wyświetlanie i wczytywanie listy oraz odtwarzanie
+        for(File line : favouriteList){
+            System.out.println(line.toString());
+        }
         clearPlaylist();
-        songs.getButtonlist().clear();
-        System.out.println(favouriteList.get(0));
+        //TODO naprawić poprawne wyświetlanie i wczytywanie listy oraz odtwarzanie
         songs.readPath("favListFile.txt");
         showPlaylist();
     }
 
     private void clearPlaylist() {
+        songs.getButtonlist().clear();
+        songs.listOfFiles.clear();
         songsList.getChildren().clear();
         //TODO naprawić usuwanie i wczytywanie przycisków do listy
     }
@@ -200,14 +200,12 @@ public class Controller {
         songTitle.setText(songs.listOfFiles.get(index).getName());
     }
 
-    //TODO naprawic ustawianie glosnosci
     public void setVolume() {
         volume.valueProperty().addListener(new InvalidationListener() {
             @Override
             public void invalidated(Observable observable) {
                 if (volume.isPressed()) {
-                    mediaPlayer.setVolume(volume.getValue() / 100); // It would set the volume
-                    // as specified by user by pressing
+                    mediaPlayer.setVolume(volume.getValue() / 100);
                 }
             }
         });
