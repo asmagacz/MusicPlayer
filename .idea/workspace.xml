@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/view/Controller.java" line="186" />
+    <bookmark url="file://$PROJECT_DIR$/src/view/Controller.java" line="181" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e7aeab-90d3-43f6-b5d6-a3e9b3fb5d60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favListFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/favListFile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/player/ListOfFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/player/ListOfFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/player/ListOfFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/ListOfFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player/Songs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Songs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Controller.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43414634">
+    <splitter split-orientation="horizontal" split-proportion="0.528083">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -35,11 +31,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/view/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="534">
-                  <caret line="181" column="82" selection-start-line="181" selection-start-column="82" selection-end-line="181" selection-end-column="82" />
+                <state relative-caret-position="-1339">
+                  <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -56,11 +52,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/player/Songs.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+                <state relative-caret-position="225">
+                  <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -71,8 +67,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/player/ListOfFiles.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="327">
-                  <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+                <state relative-caret-position="531">
+                  <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -138,10 +134,10 @@
         <option value="$PROJECT_DIR$/src/player/songTimer.java" />
         <option value="$PROJECT_DIR$/src/player/SongTimer.java" />
         <option value="$PROJECT_DIR$/src/view/musicPlayer.fxml" />
-        <option value="$PROJECT_DIR$/src/player/Songs.java" />
-        <option value="$PROJECT_DIR$/src/player/ListOfFiles.java" />
         <option value="$PROJECT_DIR$/favListFile.txt" />
+        <option value="$PROJECT_DIR$/src/player/ListOfFiles.java" />
         <option value="$PROJECT_DIR$/src/view/Controller.java" />
+        <option value="$PROJECT_DIR$/src/player/Songs.java" />
       </list>
     </option>
   </component>
@@ -265,7 +261,7 @@
       <workItem from="1554813469528" duration="71000" />
       <workItem from="1554813673059" duration="13543000" />
       <workItem from="1555850651873" duration="9996000" />
-      <workItem from="1555939187610" duration="3482000" />
+      <workItem from="1555939187610" duration="5377000" />
     </task>
     <task id="LOCAL-00001" summary="improved song list">
       <created>1551213522176</created>
@@ -306,7 +302,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55797000" />
+    <option name="totallyTimeSpent" value="57692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -379,20 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/SongTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/FavouriteSongsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/musicPlayer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -404,23 +386,20 @@
     <entry file="file://$PROJECT_DIR$/songsDataFile.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/ListOfFiles.java">
+    <entry file="file://$PROJECT_DIR$/src/player/FavouriteSongsList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/favListFile.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/Songs.java">
+    <entry file="file://$PROJECT_DIR$/src/player/ListOfFiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="531">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -429,8 +408,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="181" column="82" selection-start-line="181" selection-start-column="82" selection-end-line="181" selection-end-column="82" />
+        <state relative-caret-position="-1339">
+          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/SongTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Songs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

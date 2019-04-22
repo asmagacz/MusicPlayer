@@ -61,7 +61,6 @@ public class Controller {
     private MediaPlayer mediaPlayer;
     private ListOfFiles readListOfFiles = new ListOfFiles();
     private SongTimer timer;
-    private List<File> favouriteList = new ArrayList<>();
 
     private int index = 0;
 
@@ -160,8 +159,7 @@ public class Controller {
     }
 
     public void addToFavourite() {
-        favouriteList.add(songs.listOfFiles.get(index));
-        readListOfFiles.writeIntoFile(favouriteList, "favListFile.txt");
+        readListOfFiles.writeIntoFile(songs.listOfFiles.get(index).toString(), "favListFile.txt");
     }
 
     public void readPath() {
@@ -175,9 +173,6 @@ public class Controller {
     }
 
     public void onFavlistSelected() {
-        for(File line : favouriteList){
-            System.out.println(line.toString());
-        }
         clearPlaylist();
         //TODO naprawić poprawne wyświetlanie i wczytywanie listy oraz odtwarzanie
         songs.readPath("favListFile.txt");

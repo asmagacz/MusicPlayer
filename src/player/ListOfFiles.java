@@ -1,6 +1,5 @@
 package player;
 
-import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
 import java.io.*;
@@ -15,10 +14,6 @@ public class ListOfFiles {
     }
 
     public void readPath() {
-        //TODO dodac filtr dla plików .mp3
-        /*DirectoryChooser directoryChooser = new DirectoryChooser();
-        File selectedDirectory = directoryChooser.showDialog(null);
-        listOfFiles = selectedDirectory.listFiles();*/
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
                 "MP3 Files", "*.mp3"
@@ -34,12 +29,10 @@ public class ListOfFiles {
         }
     }
 
-    public void writeIntoFile(List<File> favSongsList, String fileName) {
+    public void writeIntoFile(String song, String fileName) {
 
         try (FileWriter writer = new FileWriter(fileName, true)) {
-            for (File file : favSongsList) {
-                writer.append(file.toString() + "\n");
-            }
+                writer.write(song + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

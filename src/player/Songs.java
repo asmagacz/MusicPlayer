@@ -29,7 +29,6 @@ public class Songs {
                 listOfFiles.add(new File(line));
                 line = br.readLine();
             }
-           // System.out.println(listOfFiles.get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,8 +40,6 @@ public class Songs {
 
             if (file.isFile()) {
                 buttonlist.add(new Button(file.getName()));
-               // System.out.println(file.getAbsolutePath());
-               // System.out.println(file.getName());
             }
 
         }
