@@ -15,10 +15,7 @@ public class Songs {
     public Songs() {
     }
 
-    // TODO: 03.04.2019 dodac 2 metody : jedna oczytuje z pliku i zamienia na liste druga po
-
     public void readPath(String fileName) {
-        //TODO dodac wczytywanie danych z  pliku do listy i generowanie listy buttonów
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
@@ -45,7 +42,8 @@ public class Songs {
         }
 
         for (int elem = 0; elem < buttonlist.size(); elem++) {
-            buttonlist.get(elem).setMinSize(460, 30);
+            buttonlist.get(elem).setMinSize(465, 30);
+            buttonlist.get(elem).setStyle("-fx-background-color: #7b98f7; -fx-border-with: 2; -fx-border-color: black;");
         }
 
     }

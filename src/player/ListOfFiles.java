@@ -20,6 +20,7 @@ public class ListOfFiles {
         ));
         List<File> files = fileChooser.showOpenMultipleDialog(null);
         listOfFiles = files;
+        //TODO zmienić na FileWriter jak metode niżej aby umożliwić wczytywanie piosenek z wielu folderów
         try (PrintWriter writer = new PrintWriter(songsDataFile, "UTF-8")) {
             for (File file : listOfFiles) {
                 writer.println(file);

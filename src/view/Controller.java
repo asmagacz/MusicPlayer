@@ -72,7 +72,7 @@ public class Controller {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    //TODO podzielić projekt na odpowiednie pliki zgodnie z MVC
+    //TODO podzielić projekt na odpowiednie pliki zgodnie z MVC oraz przemieścić pliki .txt do /src
 
     public void playMusic() {
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
@@ -174,7 +174,6 @@ public class Controller {
 
     public void onFavlistSelected() {
         clearPlaylist();
-        //TODO naprawić poprawne wyświetlanie i wczytywanie listy oraz odtwarzanie
         songs.readPath("favListFile.txt");
         showPlaylist();
     }
@@ -183,7 +182,6 @@ public class Controller {
         songs.getButtonlist().clear();
         songs.listOfFiles.clear();
         songsList.getChildren().clear();
-        //TODO naprawić usuwanie i wczytywanie przycisków do listy
     }
 
     private void showPlaylist() {
