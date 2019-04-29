@@ -42,6 +42,7 @@
                 </Menu>
               </menus>
             </MenuBar>
+            <Slider fx:id="timeSlider" layoutX="44.0" layoutY="208.0" prefHeight="14.0" prefWidth="331.0" />
             </children>
         </Pane>
     </children>

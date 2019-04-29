@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/view/Controller.java" line="180" />
+    <bookmark url="file://$PROJECT_DIR$/src/view/Controller.java" line="187" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e7aeab-90d3-43f6-b5d6-a3e9b3fb5d60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favouriteSongsData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/player/ListOfFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/player/ListOfFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/player/Songs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/player/Songs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicPlayer/view/musicPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicPlayer/view/musicPlayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/songsDataFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/songsDataFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/ListOfFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/ListOfFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/Songs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Songs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/musicPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/musicPlayer.fxml" afterDir="false" />
     </list>
@@ -28,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47567222">
+    <splitter split-orientation="horizontal" split-proportion="0.55505764">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -40,11 +28,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/view/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2282">
-                  <caret line="191" column="17" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
+                <state relative-caret-position="104">
+                  <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#4730#4731#0" expanded="true" />
@@ -75,7 +63,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/styles.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="459">
@@ -113,7 +101,7 @@
             <entry file="file://$PROJECT_DIR$/src/view/musicPlayer.fxml">
               <provider editor-type-id="JavaFX-Scene-Builder" />
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
+                <state relative-caret-position="440">
                   <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
                 </state>
               </provider>
@@ -157,11 +145,11 @@
         <option value="$PROJECT_DIR$/favListFile.txt" />
         <option value="$PROJECT_DIR$/src/player/ListOfFiles.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/view/Controller.java" />
         <option value="$PROJECT_DIR$/src/player/Songs.java" />
         <option value="$PROJECT_DIR$/src/player/Main.java" />
         <option value="$PROJECT_DIR$/src/styles.css" />
         <option value="$PROJECT_DIR$/src/view/musicPlayer.fxml" />
+        <option value="$PROJECT_DIR$/src/view/Controller.java" />
       </list>
     </option>
   </component>
@@ -227,7 +215,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556553749047" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556554275769" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/JavaFX-MusicPlayer-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -291,7 +279,7 @@
       <workItem from="1554813673059" duration="13543000" />
       <workItem from="1555850651873" duration="9996000" />
       <workItem from="1555939187610" duration="6228000" />
-      <workItem from="1556549383619" duration="4358000" />
+      <workItem from="1556549383619" duration="4882000" />
     </task>
     <task id="LOCAL-00001" summary="improved song list">
       <created>1551213522176</created>
@@ -332,7 +320,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62901000" />
+    <option name="totallyTimeSpent" value="63425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -347,14 +335,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15075922" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15075922" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.28199565" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28199565" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -468,18 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2282">
-          <caret line="191" column="17" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4730#4731#0" expanded="true" />
-            <element signature="e#4803#4804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -490,8 +466,20 @@
     <entry file="file://$PROJECT_DIR$/src/view/musicPlayer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="440">
           <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4730#4731#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

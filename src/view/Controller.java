@@ -56,6 +56,8 @@ public class Controller {
     private MenuItem favList;
     @FXML
     private ScrollPane scrollPane;
+    @FXML
+    private Slider timeSlider;
 
     private Media hit;
     private MediaPlayer mediaPlayer;
@@ -81,6 +83,7 @@ public class Controller {
         System.out.println(mediaPlayer.getTotalDuration());
         changeTitle();
         checkStatus();
+        timer();
         //TODO fix song timer
         //showTimer();
 
@@ -95,6 +98,7 @@ public class Controller {
         if (currentStatus == MediaPlayer.Status.PLAYING) { mediaPlayer.pause();
         } else {
             mediaPlayer.play();
+            timer();
         }
 
     }
@@ -111,6 +115,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
+        timer();
     }
 
     public void prevSong() {
@@ -124,6 +129,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
+        timer();
     }
 
     private void checkStatus() {
@@ -145,6 +151,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
+        timer();
 
     }
 
@@ -203,5 +210,13 @@ public class Controller {
             }
         });
 
+    }
+
+    private void timer(){
+        mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+            if (!timeSlider.isValueChanging()) {
+                timeSlider.setValue(newTime.toSeconds());
+            }
+        });
     }
 }
