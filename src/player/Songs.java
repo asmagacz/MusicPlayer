@@ -43,7 +43,7 @@ public class Songs {
 
         for (int elem = 0; elem < buttonlist.size(); elem++) {
             buttonlist.get(elem).setMinSize(465, 30);
-            buttonlist.get(elem).setStyle("-fx-background-color: #7b98f7; -fx-border-with: 2; -fx-border-color: black;");
+            buttonlist.get(elem).setStyle("-fx-background-color: #22bf95; -fx-border-with: 2; -fx-border-color: white; -fx-text-fill: white;");
         }
 
     }

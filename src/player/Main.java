@@ -14,7 +14,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/musicPlayer.fxml"));
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Music Player");
-        primaryStage.setScene(new Scene(root, 500, 700));
+        primaryStage.setScene(new Scene(root, 495, 700));
         primaryStage.getScene().getStylesheets().add("styles.css");
         primaryStage.show();
         ((Controller) fxmlLoader.getController()).setStage(primaryStage);

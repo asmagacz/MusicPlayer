@@ -1,7 +1,6 @@
 package view;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -13,9 +12,6 @@ import player.ListOfFiles;
 import player.SongTimer;
 import player.Songs;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Controller {
@@ -57,7 +53,9 @@ public class Controller {
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private Slider timeSlider;
+    private Slider timeSlider = new Slider();
+    @FXML
+    private Label duration;
 
     private Media hit;
     private MediaPlayer mediaPlayer;
@@ -95,7 +93,8 @@ public class Controller {
 
     public void pauseMusic() {
         MediaPlayer.Status currentStatus = mediaPlayer.getStatus();
-        if (currentStatus == MediaPlayer.Status.PLAYING) { mediaPlayer.pause();
+        if (currentStatus == MediaPlayer.Status.PLAYING) {
+            mediaPlayer.pause();
         } else {
             mediaPlayer.play();
             timer();
@@ -133,12 +132,9 @@ public class Controller {
     }
 
     private void checkStatus() {
-        mediaPlayer.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                mediaPlayer.stop();
-                nextSong();
-            }
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.stop();
+            nextSong();
         });
     }
 
@@ -156,12 +152,9 @@ public class Controller {
     }
 
     public void loopSong() {
-        mediaPlayer.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                mediaPlayer.seek(Duration.ZERO);
-                mediaPlayer.play();
-            }
+        mediaPlayer.setOnEndOfMedia(() -> {
+            mediaPlayer.seek(Duration.ZERO);
+            mediaPlayer.play();
         });
     }
 
@@ -201,21 +194,39 @@ public class Controller {
     }
 
     public void setVolume() {
-        volume.valueProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                if (volume.isPressed()) {
-                    mediaPlayer.setVolume(volume.getValue() / 100);
-                }
+        volume.valueProperty().addListener(observable -> {
+            if (volume.isPressed()) {
+                mediaPlayer.setVolume(volume.getValue() / 100);
             }
         });
 
     }
 
-    private void timer(){
+    private void timer() {
+        mediaPlayer.totalDurationProperty().addListener((obs, oldDuration, newDuration) ->
+                timeSlider.setMax(newDuration.toSeconds()));
         mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
             if (!timeSlider.isValueChanging()) {
                 timeSlider.setValue(newTime.toSeconds());
+            }
+            duration.textProperty().bind(
+                    Bindings.createStringBinding(() -> {
+                                Duration time = mediaPlayer.getCurrentTime();
+                                double hours = time.toHours();
+                                double minutes = (time.toMinutes() >= 60)? 0 : time.toMinutes();
+                                double seconds = (time.toSeconds() >= 60)? 0 : time.toSeconds();
+
+                                return String.format("%4d:%02d:%04.1f",
+                                        (int) hours,
+                                        (int) minutes,
+                                        seconds);
+                            },
+                            mediaPlayer.currentTimeProperty()));
+
+        });
+        timeSlider.valueProperty().addListener(observable -> {
+            if (timeSlider.isPressed()) {
+                mediaPlayer.seek(Duration.seconds(timeSlider.getValue()));
             }
         });
     }
