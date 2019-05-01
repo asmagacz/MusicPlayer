@@ -9,7 +9,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import player.ListOfFiles;
-import player.SongTimer;
 import player.Songs;
 
 import java.util.Random;
@@ -60,7 +59,6 @@ public class Controller {
     private Media hit;
     private MediaPlayer mediaPlayer;
     private ListOfFiles readListOfFiles = new ListOfFiles();
-    private SongTimer timer;
 
     private int index = 0;
 
