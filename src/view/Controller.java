@@ -1,8 +1,9 @@
 package view;
 
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -32,29 +33,13 @@ public class Controller {
     @FXML
     public Slider volume = new Slider(0, 100, 0);
     @FXML
-    public Button songsFolderPath;
-    @FXML
     public VBox songsList;
     @FXML
     public Button prev;
     @FXML
     private Label songTitle;
     @FXML
-    private Button favourite;
-    @FXML
-    private Label songTimer;
-    @FXML
-    private MenuButton menuButton;
-    @FXML
-    private MenuItem playList;
-    @FXML
-    private MenuItem favList;
-    @FXML
-    private ScrollPane scrollPane;
-    @FXML
     private Slider timeSlider = new Slider();
-    @FXML
-    private Label duration;
 
     private Media hit;
     private MediaPlayer mediaPlayer;
@@ -62,7 +47,6 @@ public class Controller {
 
     private int index = 0;
 
-    private boolean isPlaying = false;
 
     public Controller() {
     }
@@ -70,7 +54,6 @@ public class Controller {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    //TODO podzielić projekt na odpowiednie pliki zgodnie z MVC oraz przemieścić pliki .txt do /src
 
     public void playMusic() {
         hit = new Media(songs.listOfFiles.get(index).toURI().toString());
@@ -79,10 +62,7 @@ public class Controller {
         System.out.println(mediaPlayer.getTotalDuration());
         changeTitle();
         checkStatus();
-        timer();
-        //TODO fix song timer
-        //showTimer();
-
+        seeker();
     }
 
     public void stopMusic() {
@@ -95,7 +75,7 @@ public class Controller {
             mediaPlayer.pause();
         } else {
             mediaPlayer.play();
-            timer();
+            seeker();
         }
 
     }
@@ -112,7 +92,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
-        timer();
+        seeker();
     }
 
     public void prevSong() {
@@ -126,7 +106,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
-        timer();
+        seeker();
     }
 
     private void checkStatus() {
@@ -145,7 +125,7 @@ public class Controller {
         mediaPlayer.play();
         changeTitle();
         checkStatus();
-        timer();
+        seeker();
 
     }
 
@@ -200,27 +180,13 @@ public class Controller {
 
     }
 
-    private void timer() {
+    private void seeker() {
         mediaPlayer.totalDurationProperty().addListener((obs, oldDuration, newDuration) ->
                 timeSlider.setMax(newDuration.toSeconds()));
         mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
             if (!timeSlider.isValueChanging()) {
                 timeSlider.setValue(newTime.toSeconds());
             }
-            duration.textProperty().bind(
-                    Bindings.createStringBinding(() -> {
-                                Duration time = mediaPlayer.getCurrentTime();
-                                double hours = time.toHours();
-                                double minutes = (time.toMinutes() >= 60)? 0 : time.toMinutes();
-                                double seconds = (time.toSeconds() >= 60)? 0 : time.toSeconds();
-
-                                return String.format("%4d:%02d:%04.1f",
-                                        (int) hours,
-                                        (int) minutes,
-                                        seconds);
-                            },
-                            mediaPlayer.currentTimeProperty()));
-
         });
         timeSlider.valueProperty().addListener(observable -> {
             if (timeSlider.isPressed()) {
