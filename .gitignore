@@ -1,0 +1,5 @@
+$ player .gitignore
+*.idea
+/songslist
+/out
+.iml

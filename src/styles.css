@@ -1,0 +1,40 @@
+#play {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/papirus-team/papirus-apps/48/enjoy-music-player-icon.png');
+    -fx-background-position: center;
+}
+#stop {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/stop-icon.png');
+    -fx-background-position: center;
+}
+#prev {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/first-track-icon.png');
+    -fx-background-position: center;
+}
+#next {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/last-track-icon.png');
+    -fx-background-position: center;
+}
+#pause {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/pause-icon.png');
+    -fx-background-position: center;
+}
+#favourite {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/icons8/ios7/48/Gaming-Hearts-icon.png');
+    -fx-background-position: center;
+}
+#loop {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/replay-icon.png');
+    -fx-background-position: center;
+}
+#random {
+    -fx-background-radius: 48em;
+    -fx-background-image: url('http://icons.iconarchive.com/icons/danieledesantis/audio-video-outline/48/shuffle-icon.png');
+    -fx-background-position: center;
+}
